@@ -115,6 +115,10 @@ enum netdev_tx {
 };
 typedef enum netdev_tx netdev_tx_t;
 
+//#if LINUX_VERSION_CODE < KERNEL_VERSION(3,11,0)
+#define netdev_notifier_info_to_dev(ndev) ndev
+// #endif
+
 /*
  * Current order: NETDEV_TX_MASK > NET_XMIT_MASK >= 0 is significant;
  * hard_start_xmit() return < NET_XMIT_MASK means skb was consumed.
