@@ -272,7 +272,7 @@ static int ctw6120_i2c_ts_probe(struct i2c_client *client,
 	tsdata->input = input;
 	tsdata->pdata = pdata;
 
-	input->name = client->name;
+	input->name = "CTW6120 Touchscreen";
 	input->id.bustype = BUS_I2C;
 	input->dev.parent = &client->dev;
 	input->open = ctw6120_input_open;
